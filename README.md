@@ -216,7 +216,7 @@ for Q4.
 
 ## How to Explore
 
-### 1. Repository Structure
+### Repository Structure
 ```text
 ├── assets/
 │   └── dashboard_preview.jpg    
