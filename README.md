@@ -1,31 +1,34 @@
-# global_electronics_retailer_analytics
+# Global Electronics Retailer Analytics
 
-Image (Dashboard)
+<img width="1364" height="775" alt="image" src="https://github.com/user-attachments/assets/42439412-5aef-41db-9a95-7b1c5063cb63" />
+
 
 ## Table of Contents
-- Project Overview
-- Dataset
-- Tools & Analysis 
-- Key Insights
-- Business Recommendations
-- How to Explore
+- [Project Overview](#project-overview)
+- [Dataset](#dataset)
+- [Tools & Analysis](#tools--analysis)
+- [Key Insights](#key-insights)
+- [Business Recommendations](#business-recommendations)
+- [How to Explore](#how-to-explore)
 
 ## Project Overview
 
-This project is a deep analysis of the "Global Electronics Retailer" dataset from Maven Analytics. It provides valious insights on the sales and profit data from 2016 to 2021 and business recommendations over this data. It also projects the impact of the implementation of the recommendations made for the next 5 years.
+This project is a deep analysis of the "Global Electronics Retailer" dataset from Maven Analytics. It provides valious insights on the sales and profit data from 2016 to 2021 and business recommendations over this data.
 
 ## Dataset
 
-The dataset is provided by Maven Analytics at [link](https://mavenanalytics.io/data-playground/global-electronics-retailer) and brings sales data for a fictitious global electronics retailer, including csv tables containing information about transactions, products, customers, stores and currency exchange rates.
+The dataset is provided by Maven Analytics at [this link](https://mavenanalytics.io/data-playground/global-electronics-retailer) and brings sales data for a fictitious global electronics retailer, including .csv tables containing information about transactions, products, customers, stores and currency exchange rates.
 
-## Tools & Analysis (icons, links for downloading files,Description of the process followed by the video link)
+## Tools & Analysis
 
-Tools used in this project
+**Tools used in this project:**
 
-- PostgreSQL, PgAdmin 4 - Database & ELT 
-- Power BI, DAX, Star Schema - BI & Modeling 
+<img width="25" height="25" alt="postgresql" src="https://github.com/user-attachments/assets/50f6831e-ad37-4dff-a8ea-4873afa3d288" /> **PostgreSQL** - Database & ELT 
 
-The Process
+<img width="25" height="25" alt="powerbi" src="https://github.com/user-attachments/assets/ac1992ac-33b4-4d93-99ce-988b62b29f92" /> **Power BI** - BI & Modeling 
+
+
+**The Process:**
 
 1 - ETL data with PgAdmin for PostgreSQL server.
 
@@ -36,9 +39,12 @@ The Process
 3 - Dashboard creation at Power BI.
 
 
-## SQL views creation script used:
+## SQL view creation scripts used:
+
+
 
 **vw_products**
+
 
 ```
 CREATE VIEW vw_products AS
@@ -70,7 +76,10 @@ FROM
 products;
 ```
 
-** vw_sales **
+---
+
+**vw_sales**
+
 
 ```
 CREATE OR REPLACE VIEW vw_sales AS
@@ -125,29 +134,46 @@ LEFT JOIN
 
 ```
 
-## DAX formulas used for personalized Measures creation:
 
-Total Profit:
+## Star Schema tables relations
+
+<img width="949" height="788" alt="image" src="https://github.com/user-attachments/assets/7b885e37-9702-4f8c-a8fe-5a7fea968a77" />
+
+
+
+* **Central Fact Table**
+  * `vw_sales`
+  
+* **Dimension Tables:**
+  * `d_date`
+  * `vw_products`
+  * `customers`
+  * `stores`
+
+
+## DAX formulas used for personalized measures creation:
+
+**Total Profit:**
 ```
 Total Profit = [Total Revenue] - [Total Cost]
 ``` 
 
-Total Revenue:
+**Total Revenue:**
 ```
 Total Revenue = SUM('vw_sales'[line_revenue_usd])
 ```
 
-Total Orders:
+**Total Orders:**
 ```
 Total Orders = DISTINCTCOUNT('vw_sales'[order_number])
 ```
 
-Total Cost:
+**Total Cost:**
 ```
 Total Cost = SUM('vw_sales'[line_cost_usd])
 ```
 
-Gross Margin:
+**Gross Margin:**
 ```
 Gross Margin % = DIVIDE([Total Profit], [Total Revenue], 0)
 ```
