@@ -232,6 +232,6 @@ for Q4.
 │   └── vw_sales.sql            
 ├── powerbi/
 │   └── global_electronics.pbix 
-|
+├── .gitignore
 ├── LICENSE                     
 └── README.md                   
