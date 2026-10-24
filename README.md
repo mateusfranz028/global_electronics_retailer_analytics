@@ -214,5 +214,24 @@ to revert the plateau after 2020 decline.
 for Q4.
 
 
-## How to Explore (where to find the files)
-,,,,,,
+## How to Explore
+
+### 1. Repository Structure
+```text
+├── assets/
+│   └── dashboard_preview.jpg    
+├── dataset/
+|   └── Data_Dictionary.csv
+|   └── Customers.csv
+|   └── Exchange_Rates.csv
+|   └── Products.csv
+|   └── Sales.csv
+|   └── Stores.csv   
+├── sql/
+│   ├── vw_products.sql         
+│   └── vw_sales.sql            
+├── powerbi/
+│   └── global_electronics.pbix 
+|
+├── LICENSE                     
+└── README.md                   
