@@ -1,5 +1,4 @@
 # global_electronics_retailer_analytics
-An deep analysis at global electroics retailer dataset from Maven Analytics.
 
 Image (Dashboard)
 
@@ -12,7 +11,7 @@ Table of Contents
 - How to Explore
 
 Project Overview
-.....
+This project is a deep analysis of the "Global Electronics Retailer" dataset from Maven Analytics. It provides valious insights on the sales and profit data from 2016 to 2021 and business recommendations over this data. It also projects the impact of the implementation of the recommendations made for the next 5 years.
 
 Database
 ,,,,,
